@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Paper Review 2</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="pr1.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<ul class="nav navbar-nav">
+			<li class="active"><a href="..\home.html">Home</a></li>
+			<li><a href="..\review1\paperReview1.html">Paper Review 1</a></li>
+			<li><a href="paperReview2.html">Paper Review 2</a></li>
+			</ul>
+		</div>
+	</nav>
+	
+  </head>
+  
+  
+  <body class="bg1"> 
+	<h1 color="black" align="center"><b>Learning Sparse Boolean Formulae for Explaining AI Decisions</b></h1>
+	<br>
+	<div class="container1.2" style="padding-left: 70pt; padding-right: 70pt;">
+		<img src="mnist.png" width="100%" height="400px" align="middle"></img>
+	</div>
+	
+	<br><br>
+    <div class="container1">
+		<div style="width: 100%; overflow: hidden;">
+			<div style="width: 700px; float: left; padding-left: 70pt;">
+				<p align="justify" style="font-size: 15pt;">Learning Boolean formulae for explaining AI decisions has exponential complexity. Decisionmaking and planning algorithms are lacking the ability to make correct decisions and choices. This paper focuses on Learning Sparse Boolean Formulae which depend on a small and unknown subset of atomic preposition. To learn these sparse Boolean formulae, the authors [Susmit Jha, Vasumathi Raman, Alessandro Pinto, Tuhin Sahai, and Michael Francis] propose an efficient algorithm.</p>
+				<p align="justify" style="font-size: 15pt;">The authors follow the approach where a typical explanation depends on a small subset say support(Ф) of a overall vocabulary(V), i.e. the state of variable on which the explanation Ф depends is denoted by support(Ф)⊆ V, then | support(Ф) | << | V |. This support or its size is not known. Thus, the explanation are sparse formulae over the vocabulary V. To exploit the efficiency of learning sparse Boolean formulae, following contributions were made:</p>
+				<ul align="justify" style="font-size: 15pt;">
+					<li>Elaborate the problem of finding decision explanation for decision making algorithms as the problem of learning sparse algorithm.</li>
+					<li>Present an efficient algorithm where the size of required example grows logarithmically, not exponentially.</li>
+					<li>Illustrate the effectiveness of the approach on a set of case studies.</li>
+				</ul>
+				<p align="justify" style="font-size: 15pt;">The proposed approach to solve the k-sparse Boolean formula learning problem has two steps:</p>
+				<ol align="justify" style="font-size: 15pt;">
+					<li>In the first step, find the support of the explanation, that is, support (φR) ⊆ VR. This is accomplished using a novel approach that uses a binary-search like approach to first find the support of any sparse Boolean formula which requires a small number of runs (logarithmic in |VR|) of the AI algorithm Alg.</li>
+					<li>In the second step, find the Boolean combination of the atoms in VφR which forms the explanation φR. This is accomplished by distinguishing input guided learning of propositional logic formula which we have earlier used for the synthesis of programs.</li>
+				</ol>
+			</div>
+			
+			<div style="margin-left: 800px; margin-right: 70pt;">
+				<p align="justify" style="font-size: 15pt;">Let’s have a look at a classification of MNIST dataset to understand the approach of this paper. MNIST dataset has 0 – 9 digit images of 28X28 pixel. Traditionally in machine learning, KNN classifier is used to classify the digit with optimal K = 9. This classification technique does not give an optimal output as some of the test cases are incorrectly identified which is shown in Fig1.(a). The approach of this paper is used to find explanation for this error. Oracle for generation explanation works as follows : The image 4 has 6 neighbors labelled ‘9’. If the neighbor of the image labelled ‘9’ drops from 6, the oracle makes the image as positive or negative. The vocabulary (V) is formed by 4X4 pixel block being marked completely dark or clear. The set of atomic proposition in the support of the explanation Ф is illustrated manually picking assignment values to support variables. The image filtered by conjunction in the generated examples are Fig1.(c) and (d). This generation process took 3 min 48 sec with 58 examples of image 4 and 9 when we initialize the algorithm. Thus, the approach discussed by the authors is much faster and does not misclassify the digit like the traditional KNN approach.</p>
+				<img src="dig1.png" height="70px" align="middle"></img>
+				<p align="justify" style="font-size: 15pt;"><b>Fig 1.</b> Left to right : (a)Misclassified image of ‘4’, (b)closest image of ‘9’, (c)changing all pixels corresponding to support of explanations, (d)changing pixels for one of the sufficient explanation, (e)changing pixels for another sufficient explanation</p>
+				<p align="justify" style="font-size: 15pt;">From this paper, we understand how this method can be used to learn Boolean formulae corresponding to the explanation of decisions made by an AI algorithm. Also, that this capability of self-explanation would make AI agents more human-interpretable and decrease the barriers towards their adoption in safety-critical applications of autonomy.</p>
+				<p align="justify" style="font-size: 15pt;"></p>
+			</div>
+		</div>
+
+    </div>
+	
+  </body>
+</html>

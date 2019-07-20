@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Paper Review 1</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="pr1.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<ul class="nav navbar-nav">
+			<li class="active"><a href="..\home.html">Home</a></li>
+			<li><a href="paperReview1.html">Paper Review 1</a></li>
+			<li><a href="..\review2\paperReview2.html">Paper Review 2</a></li>
+			</ul>
+		</div>
+	</nav>
+	
+  </head>
+  
+  
+  <body class="bg1"> 
+	<h1 color="black" align="center"><b>Neural Program Synthesis from Diverse Demonstration Videos</b></h1>
+	<br>
+	<div class="container1.2" style="padding-left: 70pt; padding-right: 70pt;S">
+		<img src="neuralProg.jpeg" width="100%" height="400px" align="middle"></img>
+	</div>
+	
+	<br><br>
+    <div class="container1">
+		<div style="width: 100%; overflow: hidden;">
+			<div style="width: 700px; float: left; padding-left: 70pt;">
+				<p align="justify" style="font-size: 15pt;">Humans, through observation can abstract behaviors by extracting relationship between actions and perception. To collaborate with humans, a decision-making logic can be built for machines and can mimic humans. Interpreting reasons behind behaviors is little crucial for machines to mimic humans, hence this paper presents an approach that can interpret perception-based decision-making logic from diverse behavior seen in k number of visual demonstrations.</p>
+				<p align="justify" style="font-size: 15pt;">In this paper, the authors developed a program synthesizer augmented with a summarizer module which encodes the internal relationships between multiple demonstrations and summarize them into a compact representation and additionally encoding the model to learn the knowledge that is essential to infer an underlying program. This approach enables machines to interpret decision making logic and interact with humans.</p>
+				<p align="justify" style="font-size: 15pt;">This paper illustrates formulation for program synthesis from diverse demonstration videos using a program in domain specific language with perception primitives, action primitives and control flows. Action primitives defines the actions of agent i.e. the way that agent can interact with an environment. Perception primitives define how agent can percept the actions. Control flow includes if/else statements, repeat statements, while loops, and logic operations. Model architecture involves three main components : Demonstration Encoder, Summarizer Module and Program Decoder shown in fig(1). Demonstration encoder encodes each of the k number of demonstrations and summarization module summarizes them into a summary vector. Summarization module gets K demonstrations and aggregate them into a single compact vector representation using relational network (RN) module to model complex relations between demonstrations. Using summarization module significantly alleviates the difficulty of handling multiple demonstarions. The aggregation process is mathematically written as follows :</p>
+				<img src="eq1.png" height="70px" align="center"></img>
+			</div>
+			
+			<div style="margin-left: 800px; margin-right: 70pt;">
+				<p align="justify" style="font-size: 15pt;">Program decoder uses the summary vector and produces code sequence. LSTMs are used as a program decoder. LSTMs gets the previous token embedding as an input and outputs a probability of the following program token as follows :</p>
+				<img src="eq2.png" height="70px" align="center"></img>
+				<p align="justify" style="font-size: 15pt;">It is difficult to learn meaningful representations solely from sequence loss of program with increasing visual complexity, hence multitasking object is employed for end-to-end training by predicting action sequences and perceptions through following equations respectively :</p>
+				<img src="eq3.png" height="70px" align="center"></img>
+				<img src="eq4.png" height="70px" align="center"></img>
+				<p align="justify" style="font-size: 15pt;">The aggregated multi-task objective is as follows : L = Lcode + α Laction + β Lperception , Where α and β are hyperparameters controlling the importance of each loss.</p>
+				<p align="justify" style="font-size: 15pt;">Experiment was performed in different environments : Fully observable third party environment Karel and Partially observable environment ViZDoom. Performance evaluation on Karel environment shows synthesis baseline outperforms induction baseline. Because in synthesis baseline, multi-tasking objective and summarizer show significant improvement, whereas in ViZDoom environment, the proposed mode; outperforms induction baseline and synthesis baseline as the environment is more visually complex. The experiment gives satisfactory performances.</p>
+			</div>
+		</div>
+	  
+	  </div>
+	  <div class="container1.1" align="center">
+		<img src="dig1.png" align="middle"></img>
+		<p align="center" style="font-size: 15pt;">Fig(1) : Model Architecture</p>
+	  </div>
+
+   
+    </div>
+	
+  </body>
+</html>

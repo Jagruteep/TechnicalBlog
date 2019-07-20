@@ -1,0 +1,65 @@
+body, html {
+	height: 100%;
+	margin: 0;
+}
+
+.bg {
+	/* The image used */
+	background-image: url("img2.jpg");	
+	background-color: black;
+
+	/* Full height */
+	height: 100%; 
+
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+}
+
+h2 {
+	text-align: center;
+    font: 400 100px/0.5 'Cookie', Helvetica, sans-serif;
+    color: #fff;
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 7px 7px 0px rgba(0,0,0,0.05);
+}
+
+.homeP {
+    font: 25pt 'Cookie', Helvetica, sans-serif;
+    color: #fff;
+	text-align: center;
+}
+
+/* Social media links */
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-instagram {
+  background: #3f729b;
+  color: white;
+}
+
+
+
